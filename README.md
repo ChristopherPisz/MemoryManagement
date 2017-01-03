@@ -14,19 +14,23 @@ If all goes well, maybe I'll end up with a few template classes.
 
 Dependencies:
 
-) Common Library
+) Common Library  
 You can grab my common library from git hub https://github.com/ChristopherPisz/
-Expects Headers at $(SolutionDir)..\Common
+
+Expects Headers at $(SolutionDir)..\Common  
 Expects Library and Dll at $(SolutionDir)..\Common\$(Platform)\$(Configuration)
+
 Copies dll using xcopy /y /d "$(SolutionDir)..\Common\$(Platform)\$(Configuration)\*.dll" "$(OutDir)"
 
-) Boost Library
-You can grab boost from http://www.boost.org/
+) Boost Library  
+You can grab boost from http://www.boost.org/  
 This project doesn't use the entire boost library. It is for the most part just a dependency of the Common Library and only
 a few of the boost libraries are used. Feel free to narrow it down if it concerns you. They are header only at this time, but
 that might change as I further develop the common library.
-Expects headers at $(SolutionDir)..\..\Third Party\boost_1_62_0
+
+Expects headers at $(SolutionDir)..\..\Third Party\boost_1_62_0  
 Expects Libraries at $(SolutionDir)..\..\Third Party\boost_1_62_0\lib64-msvc-14.0
+
 Copies dll using REM xcopy /y /d "$(SolutionDir)..\..\Third Party\boost_1_62_0\lib64-msvc-14.0\*.dll" "$(OutDir)"
 
 
