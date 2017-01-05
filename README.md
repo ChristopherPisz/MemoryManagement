@@ -20,7 +20,8 @@ You can grab my common library from git hub https://github.com/ChristopherPisz/
 Expects Headers at $(SolutionDir)..\Common  
 Expects Library and Dll at $(SolutionDir)..\Common\$(Platform)\$(Configuration)
 
-Copies dll using xcopy /y /d "$(SolutionDir)..\Common\$(Platform)\$(Configuration)\*.dll" "$(OutDir)"
+Copies dll using post build event defined as  
+xcopy /y /d "$(SolutionDir)..\Common\$(Platform)\$(Configuration)\*.dll" "$(OutDir)"
 
 The Common Library Header handles the import of the dll, so no need to add under project settings->Linker->Input
 
