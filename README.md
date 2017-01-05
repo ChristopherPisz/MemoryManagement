@@ -17,7 +17,7 @@ Dependencies:
 ) Common Library  
 You can grab my common library from git hub https://github.com/ChristopherPisz/
 
-Expects Headers at $(SolutionDir)..\Common  
+Expects Headers at $(SolutionDir)..\Common\Common    
 Expects Library and Dll at $(SolutionDir)..\Common\$(Platform)\$(Configuration)
 
 Copies dll using post build event defined as  
@@ -36,9 +36,9 @@ Expects Libraries at $(SolutionDir)..\..\Third Party\boost_1_62_0\lib64-msvc-14.
 
 Copies each dll using post build event, defined for each configuration.  
 For example, using the date_time library:  
-xcopy /y /d "$(SolutionDir)..\..\Third Party\boost_1_62_0\lib32-msvc-14.0\boost_date_time-vc140-mt-*.dll" "$(OutDir)"  
+xcopy /y /d "$(SolutionDir)..\..\Third Party\boost_1_62_0\lib32-msvc-14.0\boost_date_time-vc140-mt-1_*.dll" "$(OutDir)"  
 xcopy /y /d "$(SolutionDir)..\..\Third Party\boost_1_62_0\lib32-msvc-14.0\boost_date_time-vc140-mt-gd*.dll" "$(OutDir)"  
-xcopy /y /d "$(SolutionDir)..\..\Third Party\boost_1_62_0\lib64-msvc-14.0\boost_date_time-vc140-mt-*.dll" "$(OutDir)"  
+xcopy /y /d "$(SolutionDir)..\..\Third Party\boost_1_62_0\lib64-msvc-14.0\boost_date_time-vc140-mt-1_*.dll" "$(OutDir)"  
 xcopy /y /d "$(SolutionDir)..\..\Third Party\boost_1_62_0\lib64-msvc-14.0\boost_date_time-vc140-mt-gd*.dll" "$(OutDir)"  
 
 
