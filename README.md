@@ -22,15 +22,23 @@ Expects Library and Dll at $(SolutionDir)..\Common\$(Platform)\$(Configuration)
 
 Copies dll using xcopy /y /d "$(SolutionDir)..\Common\$(Platform)\$(Configuration)\*.dll" "$(OutDir)"
 
+The Common Library Header handles the import of the dll, so no need to add under project settings->Linker->Input
+
 ) Boost Library  
 You can grab boost from http://www.boost.org/  
 This project doesn't use the entire boost library. It is for the most part just a dependency of the Common Library and only
-a few of the boost libraries are used. Feel free to narrow it down if it concerns you. They are header only at this time, but
-that might change as I further develop the common library.
+a few of the boost libraries are used. Feel free to narrow it down if it concerns you.
 
+Preprocessor Definition BOOST_ALL_DYN_LINK  
 Expects headers at $(SolutionDir)..\..\Third Party\boost_1_62_0  
-Expects Libraries at $(SolutionDir)..\..\Third Party\boost_1_62_0\lib64-msvc-14.0
+Expects Libraries at $(SolutionDir)..\..\Third Party\boost_1_62_0\lib64-msvc-14.0  
 
-Copies dll using REM xcopy /y /d "$(SolutionDir)..\..\Third Party\boost_1_62_0\lib64-msvc-14.0\*.dll" "$(OutDir)"
+Copies each dll using post build event, defined for each configuration.  
+For example, using the date_time library:  
+xcopy /y /d "$(SolutionDir)..\..\Third Party\boost_1_62_0\lib32-msvc-14.0\boost_date_time-vc140-mt-*.dll" "$(OutDir)"  
+xcopy /y /d "$(SolutionDir)..\..\Third Party\boost_1_62_0\lib32-msvc-14.0\boost_date_time-vc140-mt-gd*.dll" "$(OutDir)"  
+xcopy /y /d "$(SolutionDir)..\..\Third Party\boost_1_62_0\lib64-msvc-14.0\boost_date_time-vc140-mt-*.dll" "$(OutDir)"  
+xcopy /y /d "$(SolutionDir)..\..\Third Party\boost_1_62_0\lib64-msvc-14.0\boost_date_time-vc140-mt-gd*.dll" "$(OutDir)"  
+
 
 

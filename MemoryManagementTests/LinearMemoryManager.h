@@ -26,8 +26,6 @@ public:
     ~LinearMemoryManager();
 
     void * allocate(size_t size, uint8_t alignment);
-    void free(void * p);
-
     void clear();
 };
 

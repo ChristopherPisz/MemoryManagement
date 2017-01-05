@@ -1,10 +1,13 @@
 #pragma once
 
+// Project Includes
+#include "IMemoryManager.h"
+
 // Standard Includes
 #include <cstdint>
 
 //------------------------------------------------------------------------------
-class FreeListMemoryManager
+class FreeListMemoryManager : public IMemoryManager
 {
 protected:
 

@@ -4,6 +4,9 @@
 #include <cstdint>
 
 //------------------------------------------------------------------------------
+/// <summary>
+/// Base class for memory managers that are not fixed size
+/// </summary>
 class IMemoryManager
 {
 public:

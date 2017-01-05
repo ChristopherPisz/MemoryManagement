@@ -78,14 +78,6 @@ void * LinearMemoryManager::allocate(size_t size, uint8_t alignment)
 }
 
 //------------------------------------------------------------------------------
-void LinearMemoryManager::free(void * p)
-{
-    // Error - This class does not support freeing by pointer. It only frees the entire pool at once via clear()
-    const std::string msg("LinearMemoryManager does not support freeing by pointer. It only frees the entire pool at once via clear()");
-    throw Common::Exception(__FILE__, __LINE__, msg);
-}
-
-//------------------------------------------------------------------------------
 void LinearMemoryManager::clear()
 {
     m_numAllocations  = 0;
